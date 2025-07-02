@@ -86,3 +86,24 @@ body.dark-mode #snackLog li {
     font-size: 16px;
   }
 }
+nav {
+  background-color: #0077cc;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #005fa3;
+}
