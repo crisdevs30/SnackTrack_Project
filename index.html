@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <title>SnackTrack 🍪</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  
+  <!-- Day 10: Mobile app + metadata -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0077cc">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="icon.png" type="image/png">
 </head>
 <body>
   <h1>SnackTrack 🍪</h1>
@@ -16,10 +20,12 @@
   <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
 
   <p id="snackDisplay"></p>
+<p id="calorieTotal">Total Calories: 0</p>
 
   <h2>Snack Log 📜</h2>
   <ul id="snackLog"></ul>
 
+  <audio id="popSound" src="pop.mp3" preload="auto"></audio>
   <script src="script.js"></script>
 </body>
 </html>

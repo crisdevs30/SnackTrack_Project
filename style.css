@@ -60,3 +60,29 @@ body.dark-mode button:hover {
 body.dark-mode #snackLog li {
   color: #dddddd;
 }
+@media (max-width: 600px) {
+  body {
+    margin: 20px;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    margin: 8px auto;
+    display: block;
+  }
+
+  #snackDisplay {
+    font-size: 22px;
+  }
+
+  #snackLog li {
+    font-size: 16px;
+  }
+}
