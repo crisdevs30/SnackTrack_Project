@@ -28,9 +28,26 @@ function revealSnack() {
     display.style.opacity = 1;
 
     playPopSound();
-    logSnack(snack.name);
-    addCalories(snack.calories);
+    logSnack(snack); // Pass full snack object
   }, 100);
+}
+
+function logSnack(snack) {
+  const logList = document.getElementById("snackLog");
+  const listItem = document.createElement("li");
+
+  const emoji = getRandomEmoji();
+  listItem.textContent = `${emoji} ${snack.name}`;
+  listItem.classList.add("snackItem");
+
+  logList.appendChild(listItem);
+
+  if (logList.children.length > 5) {
+    logList.removeChild(logList.firstChild);
+  }
+
+  saveSnackLog();
+  addCalories(snack.calories); // This is now inside logSnack
 }
 
 function addCalories(amount) {
@@ -54,23 +71,6 @@ function clearLog() {
   totalCalories = 0;
   updateCalorieDisplay();
   localStorage.removeItem("totalCalories");
-}
-
-function logSnack(snackName) {
-  const logList = document.getElementById("snackLog");
-  const listItem = document.createElement("li");
-
-  const emoji = getRandomEmoji();
-  listItem.textContent = `${emoji} ${snackName}`;
-  listItem.classList.add("snackItem");
-
-  logList.appendChild(listItem);
-
-  if (logList.children.length > 5) {
-    logList.removeChild(logList.firstChild);
-  }
-
-  saveSnackLog();
 }
 
 function getRandomEmoji() {
